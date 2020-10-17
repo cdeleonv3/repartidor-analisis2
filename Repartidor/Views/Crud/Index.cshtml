@@ -1,0 +1,54 @@
+﻿@page
+@model Repartidor.Views.Crud.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TblCliente[0].NombreCliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblCliente[0].ApellidoCliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblCliente[0].EmailCliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblCliente[0].TelefonoCliente)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.TblCliente) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreCliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApellidoCliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailCliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TelefonoCliente)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.IdCliente">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.IdCliente">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.IdCliente">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

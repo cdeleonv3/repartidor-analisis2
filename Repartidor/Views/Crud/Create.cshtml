@@ -1,0 +1,49 @@
+﻿@page
+@model Repartidor.Views.Crud.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>TblCliente</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TblCliente.NombreCliente" class="control-label"></label>
+                <input asp-for="TblCliente.NombreCliente" class="form-control" />
+                <span asp-validation-for="TblCliente.NombreCliente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblCliente.ApellidoCliente" class="control-label"></label>
+                <input asp-for="TblCliente.ApellidoCliente" class="form-control" />
+                <span asp-validation-for="TblCliente.ApellidoCliente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblCliente.EmailCliente" class="control-label"></label>
+                <input asp-for="TblCliente.EmailCliente" class="form-control" />
+                <span asp-validation-for="TblCliente.EmailCliente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblCliente.TelefonoCliente" class="control-label"></label>
+                <input asp-for="TblCliente.TelefonoCliente" class="form-control" />
+                <span asp-validation-for="TblCliente.TelefonoCliente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

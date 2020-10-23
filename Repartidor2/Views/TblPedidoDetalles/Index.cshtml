@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Repartidor2.Models.TblPedidoDetalle>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CantidadPedidoDetalle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrecioPedidoDetalle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalPedidoDetalle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ActivoPedidoDetalle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdPedidoNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdProductoNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantidadPedidoDetalle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecioPedidoDetalle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalPedidoDetalle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActivoPedidoDetalle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdPedidoNavigation.DireccionPedido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdProductoNavigation.NombreProducto)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdPedidoDetalle">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdPedidoDetalle">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdPedidoDetalle">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

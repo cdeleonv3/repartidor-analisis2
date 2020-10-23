@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Repartidor2.Models.TblPedido>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaPedido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HoraPedido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HoraEntrega)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DireccionPedido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DetalleDireccion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ActivoPedido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdEstadoNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdRestauranteNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaPedido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoraPedido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoraEntrega)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DireccionPedido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DetalleDireccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActivoPedido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id.NombreTarjeta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEstadoNavigation.NombreEstado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdRestauranteNavigation.DireccionRestaurante)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdPedido">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdPedido">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdPedido">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

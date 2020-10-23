@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Repartidor2.Models.TblTarjeta>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreTarjeta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeroTarjeta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaVenceTarjeta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProveedorTarjeta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CvvTarjeta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ActivoTarjeta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdClienteNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreTarjeta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroTarjeta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaVenceTarjeta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProveedorTarjeta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CvvTarjeta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActivoTarjeta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdClienteNavigation.IdCliente)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
